@@ -12,7 +12,6 @@ from django.urls import reverse_lazy
 from .models import Service
 
 
-
 class ServiceListView(ListView):
     model = Service
     template_name = 'service/home.html'
@@ -36,8 +35,9 @@ class BlogCreateView(CreateView):
 
 class BlogUpdateView(UpdateView):
     model = Service
-    fields = ['name', 'category', 'description', 'price', 'pub_date']
-    template_name = 'service/post_new.html'
+    fields = ['name', 'category', 'description', 'price', 'photo']
+    template_name = 'service/post_edit.html'
+
 
 
 class BlogDeleteView(DeleteView):

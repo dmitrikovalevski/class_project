@@ -4,10 +4,15 @@
 {% block context %}
 
 {% for s in service %}
-    <div class="post-entry">
+    <div class="container mt-3">
         <h3><a href="{% url 'post_detail' s.pk %}">{{ s.category}}</a></h3>
         {{ s }}<br>
-        {{ s.description }}
+        {{ s.description }}<br>
+        {% if s.photo %}
+        <p><img src="{{ s.photo.url }}" height="200"></p>
+        {% else %}
+        <p></p>
+        {% endif %}
     </div>
 {% endfor %}
 

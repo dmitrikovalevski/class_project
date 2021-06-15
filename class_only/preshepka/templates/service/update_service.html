@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Update service{% endblock %}
+
+{% block content %}
+<h2>Update service</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{{ form.picture.label }}{{ form.picture }}</p>
+    <p>{{ form.title.label }}{{ form.title }}</p>
+    <p>{{ form.descriptions.label }}{{ form.descriptions }}</p>
+    <p>{{ form.price.label }}{{ form.price }}</p>
+    <input type="submit" value="Update service">
+</form>
+{% endblock %}

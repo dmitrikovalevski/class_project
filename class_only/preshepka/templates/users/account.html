@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Account {{ request.user.username }}{% endblock %}
+
+{% block content %}
+<h2>{{ request.user.username }}</h2>
+    {% if request.user.userinfo.image %}
+    <img src="{{ request.user.userinfo.image.url }}" height="150"><br>
+    {% endif %}
+    {{ request.user.userinfo.phone }}<br>
+    {{ request.user.email }}
+<!--    <a href="{% url '' %}" type="button" class="btn btn-secondary"></a>-->
+{% endblock %}

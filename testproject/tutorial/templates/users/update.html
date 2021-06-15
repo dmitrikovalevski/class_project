@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}User profile update{% endblock %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>{{ userform.username.label }} {{ userform.username }}</p>
+        <p>{{ userform.first_name.label }} {{ userform.first_name }}</p>
+        <p>{{ userform.last_name.label }} {{ userform.last_name }}</p>
+        <p>{{ userform.email.label }} {{ userform.email }}</p>
+        <p>{{ form.picture.label }} {{ form.picture }}</p>
+        <input type="submit" value="update">
+    </form>
+{% endblock %}

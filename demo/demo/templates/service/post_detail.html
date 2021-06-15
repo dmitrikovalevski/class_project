@@ -1,13 +1,14 @@
 {% extends 'service/base.html' %}
 
 {% block context %}
-<div class="post-empty">
+<div class="container mt-2">
   <h2>{{ service.category }}</h2>
   <p>{{ service.name }}</p>
   <p>{{ service.description }}</p>
   <p>{{ service.price }}</p>
-  <p>{{ service.pub_date }}</p>
+  <p><img src="{{ service.photo.url }}" height="200"></p>
+
+  <a class="btn btn-secondary" href="{% url 'post_edit' service.pk %}">Редактировать</a>
+  <a class="btn btn-danger" href="{% url 'post_delete' service.pk %}">Удалить</a>
 </div>
-  <a href="{% url 'post_edit' service.pk %}">Редактировать</a>
-  <a href="{% url 'post_delete' service.pk %}">Удалить</a>
 {% endblock %}

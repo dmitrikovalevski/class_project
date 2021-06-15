@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import TemplateView
+
 
 urlpatterns = [
     # Очень важна последовательность данных путей на ссылки приложений
@@ -22,8 +24,17 @@ urlpatterns = [
     # !!!  ВАЖНО  !!!
     # Если мы сделаем запрос accounts/any_path django сначала проверит 'django.contrib.auth.urls'
     # а затем уже приложение с юзерами 'users.urls'
+
+    # В главе 9 указано сделать замену. Далее указан код как было:
     path('', include('service.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('users.urls')),
+    path('users/', include('users.urls')),
+    path('users/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
+
+    # path('', TemplateView.as_view(template_name='service/home.html'), name='home'),
+    # path('admin/', admin.site.urls),
+    # path('users/', include('users.urls')),
+    # path('users/', include('django.contrib.auth.urls')),
+    # path('service/', include('service.urls')),
 ]
+
