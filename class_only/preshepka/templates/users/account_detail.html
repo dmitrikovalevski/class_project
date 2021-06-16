@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Account {{ user.username }}{% endblock %}
+
+{% block content %}
+<h2>{{ user.username }}</h2>
+    {% if user.userinfo.image %}
+    <img src="{{ user.userinfo.image.url }}" height="150"><br>
+    {% endif %}
+    {{ user.userinfo.phone }}<br>
+    {{ user.email }}
+    <p><a type="button" class="btn btn-secondary" href="{% url 'account_update' %}">Редактировать</a></p>
+{% endblock %}

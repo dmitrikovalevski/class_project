@@ -3,13 +3,13 @@
 {% block title %}{{ service.title }}{% endblock %}
 
 {% block content %}
-    <div class="position-relative">
-        <div class="position-absolute top-0 start-100 translate-middle">
+    <div class="container">
+        <div>
         {% if service.picture %}
         <img src="{{ service.picture.url }}" class="rounded" height="200">
         {% endif %}
         </div>
-        <div class="container">
+        <div>
         <p>{{ service.title }}</p>
         <p>{{ service.descriptions }}</p>
         <p>{{ service.price }}</p>

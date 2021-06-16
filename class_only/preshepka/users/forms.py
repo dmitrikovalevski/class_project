@@ -11,4 +11,8 @@ class CreateUserForm(UserCreationForm):
         fields = ['username', 'email']
 
 
+class UserAccountUpdateForm(forms.ModelForm):
 
+    class Meta:
+        model = UserInfo
+        fields = ['image', 'phone']

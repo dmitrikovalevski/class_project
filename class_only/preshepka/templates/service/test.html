@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class=" col-md-3">
+      <img src="{{ service.picture.url }}" height="200" class="rounded">
+      <p><h3>{{ service.user }}</h3></p>
+      <p>{{ service.date_created.day }}.{{ service.date_created.month }}
+        {{ service.date_created.hour }}:{{ service.date_created.minute }}</p>
+    </div>
+      <div class="col-md-8">
+        <p><h3>{{ service.title }}</h3></p>
+        <p>{{ service.descriptions }}</p>
+        <p>{{ service.price }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Account{% endblock %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{{ form.image }}</p>
+    <p>{{ form.phone }}</p>
+    <input type="submit" value="Отправить">
+</form>
+{% endblock %}
